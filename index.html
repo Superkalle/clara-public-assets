@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en" data-voice="clara">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLARA · Executive Asset Hub · Decision Governance for AI-Accelerated Organizations</title>
+<meta name="description" content="Executive asset hub for CLARA — onepagers, boardroom decks, whitepapers, partner kits, workshop briefings and thought leadership. Decision Governance for AI-accelerated organizations.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1E3A8A">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  /* ==========================================================================
+     cockpit4me · CLARA voice · asset hub
+     Visual system inherited from Branddesign/colors_and_type.css
+     ========================================================================== */
+  :root {
+    --c4m-base:    #111111;
+    --c4m-paper:   #FCFCFA;
+    --c4m-rule:    #DBD9D1;
+    --c4m-hair:    #E8E6DD;
+    --c4m-ink-1:   #111111;
+    --c4m-ink-2:   #2A2A26;
+    --c4m-ink-3:   #525049;
+    --c4m-ink-4:   #6E6E68;
+    --c4m-ink-5:   #9A9A93;
+    --c4m-ink-6:   #C5C5C0;
+
+    --accent:        #1E3A8A;
+    --accent-hover:  #3B5BC8;
+    --accent-soft:   rgba(30, 58, 138, 0.05);
+    --accent-ring:   rgba(30, 58, 138, 0.20);
+
+    --font-sans: 'Inter', system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--c4m-paper);
+    color: var(--c4m-ink-1);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+
+  /* ===== run heads ===== */
+  .runhead {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 40px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c4m-ink-4);
+  }
+  .runhead .brand {
+    color: var(--c4m-ink-1);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+  }
+  .runhead .accent-mark {
+    color: var(--accent);
+  }
+
+  /* ===== hero ===== */
+  .hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 64px 40px 56px 40px;
+    border-bottom: 1px solid var(--c4m-rule);
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(34px, 4.4vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin: 0 0 18px 0;
+    color: var(--c4m-ink-1);
+    max-width: 900px;
+  }
+  .hero .lede {
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.55;
+    color: var(--c4m-ink-3);
+    max-width: 740px;
+    margin: 0;
+  }
+  .hero .meta {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--c4m-ink-4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+  .hero .meta span::before {
+    content: "·";
+    margin-right: 14px;
+    color: var(--c4m-ink-5);
+  }
+  .hero .meta span:first-child::before { content: ""; margin: 0; }
+
+  /* ===== context section ===== */
+  .context {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 48px 40px 8px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .context h2 {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c4m-ink-3);
+    margin: 0 0 14px 0;
+    font-weight: 600;
+  }
+  .context p {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--c4m-ink-2);
+    margin: 0 0 12px 0;
+  }
+  .context .statement {
+    border-left: 2px solid var(--accent);
+    padding-left: 18px;
+    color: var(--c4m-ink-2);
+  }
+
+  /* ===== categories ===== */
+  .categories {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 56px 40px 16px 40px;
+  }
+  .categories .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .categories h2 {
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: var(--c4m-ink-1);
+  }
+  .categories .subtitle {
+    font-size: 15px;
+    color: var(--c4m-ink-4);
+    margin: 0 0 36px 0;
+    max-width: 720px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .card {
+    border: 1px solid var(--c4m-rule);
+    background: #fff;
+    padding: 26px 26px 22px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 220px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .card:hover {
+    border-color: var(--accent);
+  }
+  .card .label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .card h3 {
+    font-size: 21px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--c4m-ink-1);
+  }
+  .card p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--c4m-ink-3);
+    margin: 0;
+    flex: 1;
+  }
+  .card .assets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--c4m-hair);
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card .assets li {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--c4m-ink-2);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .card .assets li.pending {
+    color: var(--c4m-ink-5);
+  }
+  .card .assets a {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .card .assets .tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c4m-ink-5);
+    align-self: center;
+  }
+
+  /* ===== positioning strip ===== */
+  .positioning {
+    max-width: 1120px;
+    margin: 56px auto 0 auto;
+    padding: 36px 40px;
+    border-top: 1px solid var(--c4m-rule);
+    border-bottom: 1px solid var(--c4m-rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .positioning h3 {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c4m-ink-3);
+    margin: 0 0 12px 0;
+    font-weight: 600;
+  }
+  .positioning ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .positioning li {
+    font-size: 14.5px;
+    color: var(--c4m-ink-2);
+    line-height: 1.5;
+  }
+  .positioning .is li::before {
+    content: "—";
+    color: var(--accent);
+    margin-right: 10px;
+  }
+  .positioning .isnot li {
+    color: var(--c4m-ink-4);
+  }
+  .positioning .isnot li::before {
+    content: "·";
+    color: var(--c4m-ink-5);
+    margin-right: 10px;
+  }
+
+  /* ===== closing ===== */
+  .closing {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 56px 40px 32px 40px;
+  }
+  .closing p {
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.45;
+    color: var(--c4m-ink-1);
+    margin: 0 0 14px 0;
+    max-width: 820px;
+    letter-spacing: -0.005em;
+  }
+  .closing p.last {
+    color: var(--accent);
+  }
+
+  /* ===== footer ===== */
+  footer {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 32px 40px 56px 40px;
+    border-top: 1px solid var(--c4m-rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12.5px;
+    color: var(--c4m-ink-4);
+    letter-spacing: 0.02em;
+  }
+  footer .left { color: var(--c4m-ink-3); }
+  footer .right { color: var(--c4m-ink-4); }
+  footer a { color: var(--c4m-ink-3); }
+  footer a:hover { color: var(--accent); }
+
+  /* ===== responsive ===== */
+  @media (max-width: 880px) {
+    .context, .grid, .positioning { grid-template-columns: 1fr; gap: 32px; }
+    .hero { padding: 48px 28px 40px 28px; }
+    .runhead, .context, .categories, .positioning, .closing, footer {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .card:hover { border-color: var(--c4m-rule); }
+    footer { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="runhead">
+  <span class="brand">cockpit4me · <span class="accent-mark">CLARA</span></span>
+  <span>Executive Asset Hub · v1</span>
+</div>
+
+<section class="hero">
+  <div class="eyebrow">Decision Governance · Decision Hygiene · Stakeholder Intelligence</div>
+  <h1>Executive communication for AI-accelerated organizations.</h1>
+  <p class="lede">
+    CLARA is the governance and decision layer between discussion and execution.
+    This hub is the public distribution point for executive onepagers, boardroom decks,
+    whitepapers, partner kits, workshop briefings and thought leadership built on the
+    CLARA positioning system.
+  </p>
+  <div class="meta">
+    <span>v1 · 2026</span>
+    <span>Boardroom-ready</span>
+    <span>Pilot-capable</span>
+    <span>cockpit4me Branddesign</span>
+  </div>
+</section>
+
+<section class="context">
+  <div>
+    <h2>Why this hub exists</h2>
+    <p>
+      Organizations are becoming faster through AI, but they are not automatically
+      becoming clearer. Stakeholder coordination grows. Assumptions remain implicit.
+      Governance visibility decreases. Decision quality becomes unstable under
+      pressure.
+    </p>
+    <p>
+      The assets published here exist to support executive conversations about this
+      gap — and the structured governance layer CLARA introduces to close it.
+    </p>
+  </div>
+  <div>
+    <h2>How to read these assets</h2>
+    <p class="statement">
+      Every asset reinforces the same positioning: CLARA as a Decision Governance
+      Platform, not an AI assistant or productivity tool. Differences between
+      assets are differences of audience and depth — not of message.
+    </p>
+    <p>
+      Use the onepager for first contact. Use the boardroom deck for executive
+      briefings. Use the whitepapers for strategic context. Use the partner kits
+      for aligned external distribution.
+    </p>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="section-eyebrow">Asset Categories</div>
+  <h2>Executive assets, organized by purpose.</h2>
+  <p class="subtitle">
+    Every asset is versioned, governance-reviewed, and inherits the cockpit4me
+    visual identity. Pending items are generated from the same positioning sources.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="label">Onepager</div>
+      <h3>Executive Onepager</h3>
+      <p>
+        Single-page executive introduction. Designed for first C-Level contact,
+        boardroom handout and pilot conversation preparation.
+      </p>
+      <ul class="assets">
+        <li>
+          <a href="onepager/CLARA-Executive-Onepager-v2.pdf">CLARA-Executive-Onepager-v2.pdf</a>
+          <span class="tag">PDF · A4</span>
+        </li>
+        <li>
+          <a href="onepager/CLARA-Executive-Onepager-v2.html">CLARA-Executive-Onepager-v2.html</a>
+          <span class="tag">HTML</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="label">Board Decks</div>
+      <h3>Boardroom Deck</h3>
+      <p>
+        10–12 slide executive deck establishing the governance gap and CLARA's
+        role as the decision layer between communication and execution.
+      </p>
+      <ul class="assets">
+        <li class="pending">
+          CLARA-Boardroom-Deck-v1.pdf
+          <span class="tag">Pending</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="label">Whitepapers</div>
+      <h3>Decision Hygiene &amp; Governance</h3>
+      <p>
+        Long-form strategic papers on Decision Hygiene, Decision Governance and
+        the executive operating reality of AI-accelerated organizations.
+      </p>
+      <ul class="assets">
+        <li class="pending">
+          CLARA-Decision-Hygiene-Whitepaper-v1.pdf
+          <span class="tag">Pending</span>
+        </li>
+        <li class="pending">
+          CLARA-Decision-Governance-Whitepaper-v1.pdf
+          <span class="tag">Pending</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="label">Partner Kits</div>
+      <h3>Aligned Distribution</h3>
+      <p>
+        Externally shareable bundles for partners and multipliers operating
+        under explicit CLARA positioning alignment.
+      </p>
+      <ul class="assets">
+        <li class="pending">
+          CLARA-Partner-Kit-Executive-v1.zip
+          <span class="tag">Pending</span>
+        </li>
+        <li class="pending">
+          CLARA-Partner-Kit-Workshop-v1.zip
+          <span class="tag">Pending</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="label">Workshops</div>
+      <h3>Executive Workshops</h3>
+      <p>
+        Briefings for Decision Hygiene and Decision Governance workshops, pilot
+        kickoff sessions and stakeholder alignment formats.
+      </p>
+      <ul class="assets">
+        <li class="pending">
+          CLARA-Workshop-Brief-Executive-v1.pdf
+          <span class="tag">Pending</span>
+        </li>
+        <li class="pending">
+          CLARA-Workshop-Stakeholder-Alignment-v1.pdf
+          <span class="tag">Pending</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="label">LinkedIn</div>
+      <h3>Thought Leadership Assets</h3>
+      <p>
+        Visual carousels, reflection cards and governance models for LinkedIn
+        and adjacent executive channels.
+      </p>
+      <ul class="assets">
+        <li class="pending">
+          CLARA-LinkedIn-Carousel-Decision-Hygiene-v1.png
+          <span class="tag">Pending</span>
+        </li>
+        <li class="pending">
+          CLARA-LinkedIn-Visual-Governance-Layer-v1.png
+          <span class="tag">Pending</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="positioning">
+  <div>
+    <h3>CLARA is</h3>
+    <ul class="is">
+      <li>a Decision Governance Platform</li>
+      <li>a Decision Intelligence Layer</li>
+      <li>the layer between discussion and execution</li>
+      <li>an Organizational Clarity System</li>
+      <li>a Decision Hygiene system for AI-accelerated organizations</li>
+    </ul>
+  </div>
+  <div>
+    <h3>CLARA is not</h3>
+    <ul class="isnot">
+      <li>a chatbot</li>
+      <li>a generic AI assistant</li>
+      <li>an autonomous AI decision engine</li>
+      <li>a workflow or reporting tool</li>
+      <li>a productivity app or prompt wrapper</li>
+    </ul>
+  </div>
+</section>
+
+<section class="closing">
+  <p>Organizations do not fail because they lack information.</p>
+  <p>Organizations fail because decisions become unclear under pressure.</p>
+  <p class="last">CLARA exists to stabilize governance, clarity and decision quality in increasingly complex environments.</p>
+</section>
+
+<footer>
+  <div class="left">cockpit4me · CLARA Positioning System · Executive Asset Hub</div>
+  <div class="right">
+    <a href="https://github.com/Superkalle/clara-positioning-system">Repository</a> · v1 · 2026
+  </div>
+</footer>
+
+</body>
+</html>
