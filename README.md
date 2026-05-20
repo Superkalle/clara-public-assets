@@ -16,6 +16,17 @@ https://assets.decisiongovernance.de/
 
 ---
 
+## Languages
+
+The hub is bilingual.
+
+- German (default) at `/`
+- English at `/en/`
+
+Every asset in this repository is published with `-de` (German, primary) and unsuffixed (English) variants where rendered.
+
+---
+
 ## What this repository is
 
 This is the public distribution layer of the CLARA Executive Communication Operating System.
@@ -27,7 +38,7 @@ The source of truth for the assets themselves lives in a separate, non-public po
 This repository receives:
 
 - approved executive artifacts
-- the asset hub landing page
+- the asset hub landing pages (DE + EN)
 - the GitHub Pages deployment workflow
 
 It does not contain:
@@ -64,9 +75,10 @@ CLARA is not positioned as:
 ## Repository layout
 
 ```text
-index.html               public asset hub (Pages entry point)
-onepager/                executive onepagers
-board-decks/             boardroom-level executive decks
+index.html               DE asset hub (default entry point)
+en/index.html            EN asset hub
+onepager/                executive onepagers (DE + EN variants)
+board-decks/             boardroom-level executive decks (DE + EN variants)
 whitepapers/             decision governance / decision hygiene papers
 partner-kits/            externally shareable partner enablement bundles
 workshop-assets/         workshop briefings and supporting materials
@@ -82,9 +94,10 @@ Every category folder contains its own README describing the category, the curre
 Every asset carries an explicit version suffix:
 
 ```text
-CLARA-Executive-Onepager-v2.pdf
+CLARA-Executive-Onepager-v2-de.pdf   (German, primary)
+CLARA-Executive-Onepager-v2.pdf      (English)
+CLARA-Boardroom-Deck-v1-de.pdf
 CLARA-Boardroom-Deck-v1.pdf
-CLARA-Decision-Hygiene-Whitepaper-v1.pdf
 ```
 
 Versioning rules:
@@ -92,6 +105,7 @@ Versioning rules:
 - `vN` is incremented when the asset is materially regenerated.
 - A `v(N+1)` supersedes prior versions. Older versions move to `archive/` inside the category folder.
 - The version in the file name matches the version line printed inside the asset.
+- German is the primary distribution language; English variants are produced alongside.
 
 `archive/` folders are retained in the repository for traceability but excluded from the deployed Pages site.
 

@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en" data-voice="clara">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLARA · Boardroom Deck v1 · Decision Governance for AI-Accelerated Organizations</title>
+<meta name="description" content="CLARA Boardroom Deck — Decision Governance for AI-accelerated organizations. 12 executive slides, boardroom-ready, cockpit4me Branddesign.">
+<style>
+  /* ==========================================================================
+     cockpit4me · CLARA voice · Boardroom Deck v1
+     Visual system inherited from outputs/executive-onepager/CLARA-Executive-Onepager-v2.html
+     and Branddesign/colors_and_type.css / templates/decision_memo.html
+     ========================================================================== */
+  :root {
+    --c4m-base:    #111111;
+    --c4m-paper:   #FCFCFA;
+    --c4m-rule:    #DBD9D1;
+    --c4m-hair:    #E8E6DD;
+    --c4m-ink-1:   #111111;
+    --c4m-ink-2:   #2A2A26;
+    --c4m-ink-3:   #525049;
+    --c4m-ink-4:   #6E6E68;
+    --c4m-ink-5:   #9A9A93;
+    --c4m-ink-6:   #C5C5C0;
+
+    --accent:        #1E3A8A;
+    --accent-hover:  #3B5BC8;
+    --accent-soft:   rgba(30, 58, 138, 0.05);
+    --accent-ring:   rgba(30, 58, 138, 0.20);
+
+    --font-sans: 'Inter', system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  /* ===== A4 landscape slide sheet ===== */
+  @page { size: A4 landscape; margin: 0; }
+  html, body { margin: 0; background: #E8E8E6; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--c4m-ink-1);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  .slide {
+    width: 297mm;
+    height: 210mm;
+    margin: 24px auto;
+    background: var(--c4m-paper);
+    padding: 14mm 22mm 18mm 22mm;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04), 0 24px 48px -16px rgba(0,0,0,0.12);
+    position: relative;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    color: var(--c4m-ink-1);
+    display: flex;
+    flex-direction: column;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  @media print {
+    html, body { background: #fff; }
+    .slide { margin: 0; box-shadow: none; background: var(--c4m-paper); }
+  }
+
+  /* ===== shared chrome ===== */
+  .runhead {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 5mm; border-bottom: 1px solid var(--c4m-ink-1);
+    font-size: 9pt;
+  }
+  .runhead .wm { display: flex; align-items: center; gap: 10px; }
+  .runhead .wm .b { font-weight: 700; letter-spacing: -0.01em; color: var(--c4m-ink-1); }
+  .runhead .wm .s { color: var(--c4m-ink-6); }
+  .runhead .wm .p { color: var(--c4m-ink-4); }
+  .runhead .meta {
+    color: var(--c4m-ink-4); font-family: var(--font-mono);
+    font-size: 8.5pt; letter-spacing: 0.02em;
+  }
+
+  .runfoot {
+    position: absolute; left: 22mm; right: 22mm; bottom: 10mm;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 8pt; color: var(--c4m-ink-5);
+    padding-top: 3mm; border-top: 1px solid #E0E0DA;
+  }
+  .runfoot .num { color: var(--c4m-ink-3); font-weight: 700; }
+
+  /* ===== eyebrow + focus dot ===== */
+  .eyebrow {
+    font-size: 8.5pt; font-weight: 700; color: var(--c4m-ink-5);
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .dot {
+    display: inline-block; width: 8px; height: 8px;
+    background: var(--accent); margin-right: 10px; vertical-align: 1px;
+    border-radius: 999px;
+  }
+  .section-eyebrow {
+    display: flex; align-items: center; gap: 4px;
+    margin-top: 6mm; margin-bottom: 3mm;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4mm;
+  }
+
+  /* ===== type scale ===== */
+  h1.hero {
+    font-size: 36pt; font-weight: 900; line-height: 1.04;
+    letter-spacing: -0.025em; margin: 0 0 6mm; max-width: 220mm;
+    color: var(--c4m-ink-1);
+  }
+  h1.title {
+    font-size: 26pt; font-weight: 900; line-height: 1.06;
+    letter-spacing: -0.022em; margin: 0 0 5mm; max-width: 230mm;
+    color: var(--c4m-ink-1);
+  }
+  p.subline {
+    font-size: 13pt; line-height: 1.5; color: var(--c4m-ink-3);
+    max-width: 200mm; margin: 0 0 6mm;
+  }
+  p.lede {
+    font-size: 11.5pt; line-height: 1.55; color: var(--c4m-ink-3);
+    max-width: 210mm; margin: 0 0 5mm;
+  }
+  .strategic {
+    font-size: 12pt; line-height: 1.4; color: var(--c4m-ink-1);
+    border-left: 3px solid var(--accent); padding-left: 6mm;
+    max-width: 220mm; margin: 2mm 0 5mm;
+    font-weight: 600;
+  }
+  .body {
+    font-size: 10.5pt; line-height: 1.55; color: var(--c4m-ink-2);
+  }
+
+  /* ===== cover ===== */
+  .cover-frame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4mm 0 14mm;
+  }
+  .cover-frame .classification {
+    display: inline-block; padding: 3px 9px;
+    border: 1px solid var(--c4m-ink-1);
+    font-size: 8pt; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 8mm; color: var(--c4m-ink-1);
+    align-self: flex-start;
+  }
+  .cover-frame .accent-line {
+    width: 80mm; height: 3px; background: var(--accent);
+    margin: 8mm 0 6mm;
+  }
+  .cover-frame .factsheet { max-width: 220mm; }
+
+  .factsheet { border-top: 1px solid var(--c4m-ink-1); margin-top: 4mm; }
+  .factsheet .row {
+    display: grid; grid-template-columns: 46mm 1fr 18mm;
+    padding: 5px 0; border-bottom: 1px solid var(--c4m-rule);
+    align-items: baseline;
+  }
+  .factsheet .k {
+    font-size: 8pt; font-weight: 700; color: var(--c4m-ink-4);
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .factsheet .v {
+    font-size: 10pt; color: var(--c4m-ink-1); line-height: 1.4;
+  }
+  .factsheet .n {
+    font-size: 8pt; font-family: var(--font-mono);
+    color: var(--c4m-ink-6); text-align: right;
+  }
+
+  /* ===== numbered grid (4-up / 2-up) ===== */
+  .num-grid {
+    display: grid; gap: 4mm 12mm;
+    margin-top: 3mm;
+  }
+  .num-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .num-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .num-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .num-item {
+    display: grid; grid-template-columns: 12mm 1fr;
+    border-top: 1px solid var(--c4m-rule);
+    padding: 3mm 0 0;
+  }
+  .num-item .n {
+    font-size: 8pt; font-family: var(--font-mono);
+    color: var(--c4m-ink-6); letter-spacing: 0.04em;
+  }
+  .num-item .t {
+    font-size: 10.5pt; font-weight: 800; color: var(--c4m-ink-1);
+    line-height: 1.25; margin: 0 0 2mm;
+    letter-spacing: -0.01em;
+  }
+  .num-item .d {
+    font-size: 9.5pt; line-height: 1.5; color: var(--c4m-ink-3);
+  }
+
+  /* ===== layer stack (3-tier governance visual) ===== */
+  .layer-stack {
+    margin: 3mm 0 1mm;
+    display: flex; flex-direction: column; align-items: stretch;
+    gap: 0;
+    max-width: 240mm;
+  }
+  .layer {
+    border: 1px solid var(--c4m-rule);
+    background: #fff;
+    padding: 5mm 8mm;
+    display: grid; grid-template-columns: 50mm 1fr 16mm;
+    gap: 6mm; align-items: center;
+    position: relative;
+  }
+  .layer.is-core {
+    border-color: var(--c4m-ink-1);
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding-left: calc(8mm - 4px);
+  }
+  .layer.is-gap {
+    border-style: dashed;
+    border-color: var(--c4m-ink-5);
+    background: #FAFAF6;
+  }
+  .layer .role {
+    font-size: 8pt; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--c4m-ink-4);
+  }
+  .layer.is-core .role { color: var(--accent); }
+  .layer.is-gap .role { color: var(--c4m-ink-3); }
+  .layer .name {
+    font-size: 12pt; font-weight: 900; letter-spacing: -0.01em;
+    color: var(--c4m-ink-1); line-height: 1.2; margin: 1mm 0 0;
+  }
+  .layer.is-gap .name { color: var(--c4m-ink-3); font-weight: 700; }
+  .layer .desc {
+    font-size: 9pt; color: var(--c4m-ink-3); line-height: 1.5;
+  }
+  .layer .marker {
+    font-size: 8pt; font-family: var(--font-mono);
+    color: var(--c4m-ink-6); text-align: right;
+  }
+  .layer-arrow {
+    height: 5mm; display: flex; align-items: center; justify-content: center;
+  }
+  .layer-arrow::before {
+    content: "";
+    width: 1px; height: 4mm; background: var(--c4m-ink-1);
+    display: block;
+  }
+
+  /* ===== transformation arrow (3 nodes) ===== */
+  .transform {
+    display: grid;
+    grid-template-columns: 1fr 16mm 1fr 16mm 1fr;
+    gap: 0; align-items: stretch;
+    margin: 4mm 0 2mm;
+    max-width: 250mm;
+  }
+  .transform .node {
+    border: 1px solid var(--c4m-rule);
+    background: #fff;
+    padding: 5mm 6mm;
+    display: flex; flex-direction: column; justify-content: center;
+    min-height: 26mm;
+  }
+  .transform .node.final {
+    border-color: var(--c4m-ink-1);
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding-left: calc(6mm - 4px);
+  }
+  .transform .node .l {
+    font-size: 8pt; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--c4m-ink-4);
+    margin-bottom: 2mm;
+  }
+  .transform .node.final .l { color: var(--accent); }
+  .transform .node .t {
+    font-size: 11pt; font-weight: 800; line-height: 1.25;
+    color: var(--c4m-ink-1); letter-spacing: -0.01em;
+  }
+  .transform .arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--c4m-ink-3); font-family: var(--font-mono);
+    font-size: 14pt;
+  }
+
+  /* ===== boundary table ===== */
+  .boundary {
+    width: 100%; border-collapse: collapse; margin-top: 3mm;
+    font-size: 9.5pt; max-width: 240mm;
+  }
+  .boundary th, .boundary td {
+    padding: 5px 8px 5px 0; border-bottom: 1px solid var(--c4m-rule);
+    text-align: left; vertical-align: top;
+  }
+  .boundary th {
+    font-size: 8pt; font-weight: 700; color: var(--c4m-ink-5);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border-bottom: 1px solid var(--c4m-ink-1);
+  }
+  .boundary td.num {
+    font-family: var(--font-mono); color: var(--c4m-ink-6);
+    width: 10mm; font-size: 8pt;
+  }
+  .boundary td.cat {
+    font-weight: 700; color: var(--c4m-ink-1); width: 56mm; line-height: 1.35;
+  }
+  .boundary td.does {
+    color: var(--c4m-ink-3); line-height: 1.45; width: 78mm;
+  }
+  .boundary td.gap {
+    color: var(--c4m-ink-1); line-height: 1.45;
+  }
+
+  /* ===== differentiator capability blocks (4-up) ===== */
+  .cap-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+    margin-top: 3mm; max-width: 245mm;
+    border-top: 1px solid var(--c4m-ink-1);
+  }
+  .cap {
+    padding: 5mm 5mm 4mm 0;
+    border-right: 1px solid var(--c4m-rule);
+  }
+  .cap:last-child { border-right: none; padding-right: 0; }
+  .cap .n {
+    font-size: 8pt; font-family: var(--font-mono);
+    color: var(--c4m-ink-6); margin-bottom: 3mm;
+  }
+  .cap .t {
+    font-size: 11pt; font-weight: 900; color: var(--c4m-ink-1);
+    line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 3mm;
+  }
+  .cap .d {
+    font-size: 9pt; line-height: 1.5; color: var(--c4m-ink-3);
+  }
+
+  /* ===== pilot path (3 phases) ===== */
+  .pilot-path {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    margin-top: 3mm; max-width: 245mm;
+    border-top: 1px solid var(--c4m-ink-1);
+  }
+  .phase {
+    padding: 5mm 6mm 4mm 0;
+    border-right: 1px solid var(--c4m-rule);
+  }
+  .phase:last-child { border-right: none; padding-right: 0; }
+  .phase .n {
+    font-size: 8pt; font-family: var(--font-mono);
+    color: var(--accent); font-weight: 700; margin-bottom: 3mm;
+    letter-spacing: 0.06em;
+  }
+  .phase .t {
+    font-size: 11.5pt; font-weight: 900; color: var(--c4m-ink-1);
+    line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 3mm;
+  }
+  .phase .d {
+    font-size: 9.5pt; line-height: 1.5; color: var(--c4m-ink-3);
+  }
+  .phase ul { margin: 2mm 0 0; padding: 0; list-style: none; }
+  .phase li {
+    font-size: 9pt; line-height: 1.5; color: var(--c4m-ink-2);
+    padding-left: 4mm; position: relative;
+  }
+  .phase li::before {
+    content: "—"; color: var(--accent);
+    position: absolute; left: 0;
+  }
+
+  /* ===== value matrix ===== */
+  .value-matrix {
+    width: 100%; border-collapse: collapse; margin-top: 3mm;
+    font-size: 9.5pt; max-width: 240mm;
+  }
+  .value-matrix th, .value-matrix td {
+    padding: 5px 8px 5px 0; border-bottom: 1px solid var(--c4m-rule);
+    text-align: left; vertical-align: top;
+  }
+  .value-matrix th {
+    font-size: 8pt; font-weight: 700; color: var(--c4m-ink-5);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border-bottom: 1px solid var(--c4m-ink-1);
+  }
+  .value-matrix td.k {
+    font-weight: 700; color: var(--c4m-ink-1); width: 78mm; line-height: 1.35;
+  }
+  .value-matrix td.v {
+    color: var(--c4m-ink-3); line-height: 1.45;
+  }
+  .value-matrix td.num {
+    font-family: var(--font-mono); color: var(--c4m-ink-6);
+    width: 10mm; font-size: 8pt;
+  }
+
+  /* ===== closing statement ===== */
+  .statement {
+    border-top: 1px solid var(--c4m-ink-1);
+    border-bottom: 1px solid var(--c4m-ink-1);
+    padding: 8mm 0 7mm;
+    margin: 6mm 0 0;
+    max-width: 230mm;
+  }
+  .statement p {
+    font-size: 16pt; line-height: 1.4; margin: 0 0 5mm;
+    color: var(--c4m-ink-1); letter-spacing: -0.012em;
+    font-weight: 600;
+  }
+  .statement p.last {
+    color: var(--accent); font-weight: 800;
+  }
+  .statement p:last-child { margin-bottom: 0; }
+
+  /* ===== two-column body ===== */
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0 16mm;
+    margin-top: 3mm;
+  }
+  .two-col .col h3 {
+    font-size: 9pt; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--c4m-ink-4); margin: 0 0 3mm;
+  }
+  .two-col .col.is-accent h3 { color: var(--accent); }
+  .two-col ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 2mm;
+  }
+  .two-col li {
+    font-size: 10pt; line-height: 1.45;
+    color: var(--c4m-ink-2);
+    padding-left: 5mm; position: relative;
+  }
+  .two-col li::before {
+    content: "—"; color: var(--c4m-ink-5);
+    position: absolute; left: 0;
+  }
+  .two-col .col.is-accent li::before { color: var(--accent); }
+  .two-col .col.is-accent li { color: var(--c4m-ink-1); }
+
+  /* ===== utility ===== */
+  .strap {
+    font-size: 9.5pt; color: var(--c4m-ink-4); line-height: 1.5;
+    margin-top: 2mm; max-width: 220mm;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================================== -->
+<!-- SLIDE 1 — Executive Opening                                       -->
+<!-- ================================================================== -->
+<section class="slide" id="s1">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content cover-frame">
+    <span class="classification">Boardroom Briefing</span>
+    <h1 class="hero">Decision Governance for AI-Accelerated Organizations.</h1>
+    <p class="subline">
+      CLARA creates structure, traceability and organizational clarity where increasing speed and complexity challenge decision quality.
+    </p>
+    <div class="accent-line"></div>
+
+    <div class="factsheet">
+      <div class="row">
+        <div class="k">Category</div>
+        <div class="v">Decision Governance Platform</div>
+        <div class="n">01</div>
+      </div>
+      <div class="row">
+        <div class="k">Layer</div>
+        <div class="v">Between communication and execution</div>
+        <div class="n">02</div>
+      </div>
+      <div class="row">
+        <div class="k">Audience</div>
+        <div class="v">Boards · C-Level · Governance · Transformation</div>
+        <div class="n">03</div>
+      </div>
+      <div class="row">
+        <div class="k">Status</div>
+        <div class="v">CLARA 0.9.50 · Pilot-capable · Controlled production</div>
+        <div class="n">04</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">01</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 2 — AI Acceleration                                          -->
+<!-- ================================================================== -->
+<section class="slide" id="s2">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">01 · The New Operating Reality</span></div>
+    <h1 class="title">Organizations are becoming faster. They are not automatically becoming clearer.</h1>
+    <p class="lede">
+      AI accelerates communication, execution and decision frequency. Organizational speed is no longer the constraint.
+      Speed without structure produces ambiguity, contradiction and coordination pressure.
+    </p>
+
+    <div class="num-grid cols-3">
+      <div class="num-item">
+        <div class="n">01</div>
+        <div>
+          <div class="t">Communication accelerates.</div>
+          <div class="d">More inputs, more channels, more synthesis under shorter cycles.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">02</div>
+        <div>
+          <div class="t">Execution accelerates.</div>
+          <div class="d">AI compresses the time between intent and operational action.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">03</div>
+        <div>
+          <div class="t">Decision frequency rises.</div>
+          <div class="d">Leadership teams face more decisions, in shorter windows, with more stakeholders.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="strategic" style="margin-top: 8mm;">
+      Speed has shifted from advantage to operating condition. Clarity has not kept pace.
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">02</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 3 — The Governance Gap                                       -->
+<!-- ================================================================== -->
+<section class="slide" id="s3">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">02 · The Governance Gap</span></div>
+    <h1 class="title">The constraint has shifted from information to decision quality.</h1>
+    <p class="lede">
+      Most organizations have decades of investment in optimizing communication, workflows, reporting and execution.
+      Very few have systematic investment in optimizing the decision itself.
+    </p>
+
+    <div class="two-col">
+      <div class="col">
+        <h3>Optimized today</h3>
+        <ul>
+          <li>Communication channels</li>
+          <li>Workflow tooling</li>
+          <li>Reporting and BI</li>
+          <li>Execution and delivery</li>
+          <li>Document collaboration</li>
+          <li>AI-generated content</li>
+        </ul>
+      </div>
+      <div class="col is-accent">
+        <h3>Not systematically optimized</h3>
+        <ul>
+          <li>Decision quality</li>
+          <li>Governance clarity</li>
+          <li>Stakeholder alignment</li>
+          <li>Rationale traceability</li>
+          <li>Assumption transparency</li>
+          <li>Decision Hygiene</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="strategic" style="margin-top: 7mm;">
+      The structural gap is not in tooling. It is in the layer that governs how decisions are formed.
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">03</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 4 — Decision Instability                                     -->
+<!-- ================================================================== -->
+<section class="slide" id="s4">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">03 · The Executive Symptom</span></div>
+    <h1 class="title">Decisions become unclear under pressure.</h1>
+    <p class="lede">
+      The governance gap does not appear as a tooling failure. It appears as a leadership pattern — visible in every
+      complex initiative, across every accelerated organization.
+    </p>
+
+    <div class="num-grid cols-2">
+      <div class="num-item">
+        <div class="n">01</div>
+        <div>
+          <div class="t">Assumptions remain implicit.</div>
+          <div class="d">Decisions are made against assumptions no one has written down, and that no one revisits when conditions change.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">02</div>
+        <div>
+          <div class="t">Stakeholder perspectives fragment.</div>
+          <div class="d">Different parts of the organization hold different versions of the decision context, none of which are aggregated.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">03</div>
+        <div>
+          <div class="t">Rationale evaporates.</div>
+          <div class="d">Once a decision moves into execution, the reasoning behind it is no longer recoverable from the trail of meetings and messages.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">04</div>
+        <div>
+          <div class="t">Accountability becomes diffuse.</div>
+          <div class="d">When outcomes diverge, the organization cannot reconstruct who decided what, on which conditions, against which alternatives.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="strategic" style="margin-top: 6mm;">
+      Organizations rarely fail because nobody worked. They fail because decisions became unclear under pressure.
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">04</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 5 — Why Existing Systems Are Not Enough                      -->
+<!-- ================================================================== -->
+<section class="slide" id="s5">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">04 · Existing Tooling</span></div>
+    <h1 class="title">Existing systems govern communication and execution. They do not govern decisions.</h1>
+
+    <div class="layer-stack" style="margin-top: 4mm;">
+      <div class="layer">
+        <div>
+          <div class="role">Communication Layer</div>
+          <div class="name">Teams · Meetings · Email · AI Tools</div>
+        </div>
+        <div class="desc">Where discussion happens. Optimized for throughput, not for structure.</div>
+        <div class="marker">01</div>
+      </div>
+      <div class="layer-arrow"></div>
+      <div class="layer is-gap">
+        <div>
+          <div class="role">Governance Gap</div>
+          <div class="name">No structured decision layer</div>
+        </div>
+        <div class="desc">Assumptions, perspectives, risks and rationale move through the gap without aggregation or traceability.</div>
+        <div class="marker">02</div>
+      </div>
+      <div class="layer-arrow"></div>
+      <div class="layer">
+        <div>
+          <div class="role">Execution Layer</div>
+          <div class="name">Projects · Jira · Operations</div>
+        </div>
+        <div class="desc">Where work happens. Optimized for delivery, not for the decision behind the delivery.</div>
+        <div class="marker">03</div>
+      </div>
+    </div>
+
+    <p class="strap" style="margin-top: 6mm;">
+      The gap is not a tooling deficit at either end. The communication and execution layers are already mature.
+      What is missing is the layer in between.
+    </p>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">05</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 6 — The CLARA Governance Layer                              -->
+<!-- ================================================================== -->
+<section class="slide" id="s6">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">05 · The CLARA Layer</span></div>
+    <h1 class="title">CLARA structures the space between discussion and execution.</h1>
+
+    <div class="layer-stack" style="margin-top: 4mm;">
+      <div class="layer">
+        <div>
+          <div class="role">Communication Layer</div>
+          <div class="name">Teams · Meetings · Email · AI Tools</div>
+        </div>
+        <div class="desc">Discussion, synthesis and information exchange remain in existing tooling.</div>
+        <div class="marker">01</div>
+      </div>
+      <div class="layer-arrow"></div>
+      <div class="layer is-core">
+        <div>
+          <div class="role">CLARA · Decision Governance Layer</div>
+          <div class="name">Assumptions · Stakeholders · Risks · Traceability · Governance</div>
+        </div>
+        <div class="desc">A structured layer for the formation of the decision itself — explicit, aggregated, traceable.</div>
+        <div class="marker">02</div>
+      </div>
+      <div class="layer-arrow"></div>
+      <div class="layer">
+        <div>
+          <div class="role">Execution Layer</div>
+          <div class="name">Projects · Jira · Operations</div>
+        </div>
+        <div class="desc">Execution inherits a structured decision, with rationale and conditions intact.</div>
+        <div class="marker">03</div>
+      </div>
+    </div>
+
+    <p class="strap" style="margin-top: 6mm;">
+      CLARA does not replace the communication or execution layers. It introduces the missing layer between them.
+    </p>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">06</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 7 — Decision Hygiene                                        -->
+<!-- ================================================================== -->
+<section class="slide" id="s7">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">06 · Decision Hygiene</span></div>
+    <h1 class="title">Decision quality becomes a management discipline.</h1>
+    <p class="lede">
+      CLARA operationalizes Decision Hygiene — the practice of making the conditions of a decision explicit, comparable
+      and traceable, before execution depends on them.
+    </p>
+
+    <div class="num-grid cols-3">
+      <div class="num-item">
+        <div class="n">01</div>
+        <div>
+          <div class="t">Explicit assumptions.</div>
+          <div class="d">The conditions a decision depends on are documented, not implied.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">02</div>
+        <div>
+          <div class="t">Structured perspectives.</div>
+          <div class="d">Stakeholder views are captured and aggregated, not lost between meetings.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">03</div>
+        <div>
+          <div class="t">Visible risks.</div>
+          <div class="d">Risks are surfaced inside the decision context, not in parallel documents.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">04</div>
+        <div>
+          <div class="t">Governance logic.</div>
+          <div class="d">Who decides, on which conditions, against which alternatives — made explicit.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">05</div>
+        <div>
+          <div class="t">Rationale traceability.</div>
+          <div class="d">The reasoning behind a decision remains recoverable after execution.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">06</div>
+        <div>
+          <div class="t">Operational discipline.</div>
+          <div class="d">Decision Hygiene shifts from conceptual practice to operational behavior.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">07</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 8 — Stakeholder Intelligence                                -->
+<!-- ================================================================== -->
+<section class="slide" id="s8">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">07 · Stakeholder Intelligence</span></div>
+    <h1 class="title">The organization becomes understandable.</h1>
+    <p class="lede">
+      Stakeholder perspectives are no longer fragmented across meetings, channels and personal notes. CLARA captures,
+      structures and aggregates them into organizational clarity.
+    </p>
+
+    <div class="transform">
+      <div class="node">
+        <div class="l">State today</div>
+        <div class="t">Fragmented perspectives across meetings and channels</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="l">CLARA layer</div>
+        <div class="t">Structured capture and aggregation of stakeholder views</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node final">
+        <div class="l">Outcome</div>
+        <div class="t">Structured organizational clarity, available to the decision</div>
+      </div>
+    </div>
+
+    <div class="strategic" style="margin-top: 8mm;">
+      The decision is no longer made on a partial picture. The organization itself becomes legible inside the decision.
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">08</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 9 — Differentiation                                          -->
+<!-- ================================================================== -->
+<section class="slide" id="s9">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">08 · Where CLARA Fits</span></div>
+    <h1 class="title">A different category — not a better assistant, workflow tool or report.</h1>
+
+    <table class="boundary">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Category</th>
+          <th>What it does well</th>
+          <th>What it does not structure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">01</td>
+          <td class="cat">Copilot · generic AI assistants</td>
+          <td class="does">Generates content, drafts, summaries.</td>
+          <td class="gap">The decision itself, its rationale, its governance conditions.</td>
+        </tr>
+        <tr>
+          <td class="num">02</td>
+          <td class="cat">Teams · collaboration platforms</td>
+          <td class="does">Hosts communication, channels, files.</td>
+          <td class="gap">The structured layer in which the decision is formed.</td>
+        </tr>
+        <tr>
+          <td class="num">03</td>
+          <td class="cat">Jira · execution systems</td>
+          <td class="does">Tracks work, sprints, delivery.</td>
+          <td class="gap">The reasoning, assumptions and stakeholder context behind the work.</td>
+        </tr>
+        <tr>
+          <td class="num">04</td>
+          <td class="cat">BI · reporting platforms</td>
+          <td class="does">Describes outcomes and metrics.</td>
+          <td class="gap">The conditions and rationale that shape decisions before outcomes form.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cap-grid">
+      <div class="cap">
+        <div class="n">01</div>
+        <div class="t">Deterministic Governance</div>
+        <div class="d">Explainable, reproducible governance logic — no opaque scoring.</div>
+      </div>
+      <div class="cap">
+        <div class="n">02</div>
+        <div class="t">Controlled AI Usage</div>
+        <div class="d">AI as a structured support layer, never as autonomous authority.</div>
+      </div>
+      <div class="cap">
+        <div class="n">03</div>
+        <div class="t">Traceability &amp; Explainability</div>
+        <div class="d">Rationale, assumptions and conditions remain recoverable after the decision.</div>
+      </div>
+      <div class="cap">
+        <div class="n">04</div>
+        <div class="t">Stakeholder Intelligence</div>
+        <div class="d">Fragmented perspectives become structured organizational clarity.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">09</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 10 — Operational Maturity                                    -->
+<!-- ================================================================== -->
+<section class="slide" id="s10">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">09 · Operational Maturity</span></div>
+    <h1 class="title">CLARA is operationally usable. Not a conceptual demo.</h1>
+    <p class="lede">
+      CLARA 0.9.50 already supports real stakeholder and decision processes in controlled production environments.
+      The platform is positioned for executive pilot use — with structured governance and traceability from day one.
+    </p>
+
+    <div class="num-grid cols-3">
+      <div class="num-item">
+        <div class="n">01</div>
+        <div>
+          <div class="t">Stakeholder flows</div>
+          <div class="d">Structured capture and aggregation of stakeholder perspectives.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">02</div>
+        <div>
+          <div class="t">Aggregation logic</div>
+          <div class="d">Deterministic aggregation across perspectives, assumptions and risks.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">03</div>
+        <div>
+          <div class="t">Governance orchestration</div>
+          <div class="d">Structured workflows for how decisions are formed and approved.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">04</div>
+        <div>
+          <div class="t">Decision workspaces</div>
+          <div class="d">Operational environments where decisions take shape with full context.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">05</div>
+        <div>
+          <div class="t">Traceability</div>
+          <div class="d">Assumptions, rationale and conditions retained across the decision lifecycle.</div>
+        </div>
+      </div>
+      <div class="num-item">
+        <div class="n">06</div>
+        <div>
+          <div class="t">Callback-controlled flows</div>
+          <div class="d">Deterministic orchestration of stakeholder and governance steps.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">10</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 11 — Pilot Model                                             -->
+<!-- ================================================================== -->
+<section class="slide" id="s11">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">10 · Adoption Path</span></div>
+    <h1 class="title">From boardroom interest to operational decision governance.</h1>
+    <p class="lede">
+      CLARA enters the organization through a structured executive pilot — a defined scope, a defined stakeholder model
+      and defined success conditions. The path from interest to operational governance is concrete.
+    </p>
+
+    <div class="pilot-path">
+      <div class="phase">
+        <div class="n">PHASE 01 · WEEK 0–2</div>
+        <div class="t">Executive scoping</div>
+        <div class="d">Definition of pilot scope, stakeholder model and governance objectives.</div>
+        <ul>
+          <li>Decision domain selection</li>
+          <li>Stakeholder map</li>
+          <li>Pilot success conditions</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="n">PHASE 02 · WEEK 2–8</div>
+        <div class="t">Decision Room in production</div>
+        <div class="d">CLARA in controlled production for a real decision context with real stakeholders.</div>
+        <ul>
+          <li>Structured stakeholder flows</li>
+          <li>Aggregation in operation</li>
+          <li>Governance traceability live</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <div class="n">PHASE 03 · WEEK 8–10</div>
+        <div class="t">Executive review</div>
+        <div class="d">Structured review against pilot conditions, with a clear path to rollout if confirmed.</div>
+        <ul>
+          <li>Outcome review</li>
+          <li>Governance evidence</li>
+          <li>Rollout decision</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="strap" style="margin-top: 7mm;">
+      The pilot is intentionally narrow. Scope discipline is part of governance discipline.
+    </p>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">11</span> / 12</span>
+  </footer>
+</section>
+
+<!-- ================================================================== -->
+<!-- SLIDE 12 — Strategic Value & Executive Closing                    -->
+<!-- ================================================================== -->
+<section class="slide" id="s12">
+  <header class="runhead">
+    <div class="wm">
+      <span class="b">cockpit4me</span>
+      <span class="s">/</span>
+      <span class="p">CLARA · Decision Governance</span>
+    </div>
+    <div class="meta">Boardroom Deck v1 · Executive</div>
+  </header>
+
+  <div class="content">
+    <div class="section-eyebrow"><span class="dot"></span><span class="eyebrow">11 · Strategic Value &amp; Closing</span></div>
+    <h1 class="title">Decision quality becomes a strategic capability.</h1>
+
+    <table class="value-matrix">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Strategic capability</th>
+          <th>Effect on the organization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">01</td>
+          <td class="k">Governance visibility</td>
+          <td class="v">Decisions become legible to leadership without rebuilding context.</td>
+        </tr>
+        <tr>
+          <td class="num">02</td>
+          <td class="k">Reduced ambiguity</td>
+          <td class="v">Assumptions and conditions are explicit, comparable and revisable.</td>
+        </tr>
+        <tr>
+          <td class="num">03</td>
+          <td class="k">Structured stakeholder alignment</td>
+          <td class="v">Stakeholder views aggregate into shared organizational clarity.</td>
+        </tr>
+        <tr>
+          <td class="num">04</td>
+          <td class="k">Decision traceability</td>
+          <td class="v">Rationale survives the transition from decision to execution.</td>
+        </tr>
+        <tr>
+          <td class="num">05</td>
+          <td class="k">Organizational clarity</td>
+          <td class="v">Cross-functional initiatives operate on a shared, structured context.</td>
+        </tr>
+        <tr>
+          <td class="num">06</td>
+          <td class="k">Safer AI-related decision processes</td>
+          <td class="v">AI participates as a controlled support layer, not as autonomous authority.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="statement">
+      <p>Organizations do not fail because they lack information.</p>
+      <p>Organizations fail because decisions become unclear under pressure.</p>
+      <p class="last">CLARA exists to stabilize governance, clarity and decision quality in increasingly complex environments.</p>
+    </div>
+  </div>
+
+  <footer class="runfoot">
+    <span>CLARA · Boardroom Deck v1 · 2026</span>
+    <span><span class="num">12</span> / 12</span>
+  </footer>
+</section>
+
+</body>
+</html>
